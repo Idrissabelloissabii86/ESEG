@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESEG-Agadez</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link
+        href="https://googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+        rel="stylesheet">
+    <script src="tailwind.config.js"></script>
+</head>
+
+<body class="font-corps antialiased">
+
+    <nav class="absolute top-0 left-0 w-full z-50 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center z-[100]">
+                    <img class="h-10 w-auto object-contain bg-white rounded-full p-1 shadow" src="./images/logo.jpg"
+                        alt="Logo ESEG Agadez">
+                    <span class="ml-3 text-white font-bold text-lg hidden md:block">ESEG</span>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="./index.html"
+                        class="text-white hover:text-esegBleuClair transition font-medium">Accueil</a>
+                    <a href="./filiere.html" class="text-white/90 hover:text-esegBleuClair transition font-medium">Nos
+                        filières</a>
+                    <a href="./admission.html"
+                        class="text-white/90 hover:text-esegBleuClair transition font-medium">Admission</a>
+                    <a href="./index.html#about" class="text-white/90 hover:text-esegBleuClair transition font-medium">À
+                        propos</a>
+                    <a href="./index.html#contact"
+                        class="bg-esegBleuFonce hover:bg-esegBleuClair text-white px-5 py-2.5 rounded-lg font-semibold shadow transition duration-150">Contact</a>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-white bg-esegBleuFonce focus:outline-none focus:ring-2 focus:ring-white rounded p-1 z-[100]">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="burger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden h-[100vh] lg:hidden bg-none backdrop-blur-md absolute top-0 left-0 w-full">
+            <div class="flex flex-col gap-4 px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center mt-20">
+                <a href="./index.html" class="text-white hover:text-esegBleuClair transition font-medium">Accueil</a>
+                <a href="./filiere.html" class="text-white/90 hover:text-esegBleuClair transition font-medium">Nos
+                    filières</a>
+                <a href="./admission.html"
+                    class="text-white/90 hover:text-esegBleuClair transition font-medium">Admission</a>
+                <a href="./index.html#about" class="text-white/90 hover:text-esegBleuClair transition font-medium">À
+                    propos</a>
+                <a href="./index.html#contact"
+                    class="bg-esegBleuFonce hover:bg-esegBleuClair text-white px-5 py-2.5 rounded-lg font-semibold shadow transition duration-150">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header
+        class="relative bg-cover bg-right md:bg-center h-[20vh] lg:h-[20vh] min-h-[300px] flex items-center overflow-visible"
+        style="background-image: url('./images/image3.jpg');">
+
+        <div class="absolute inset-0 bg-black/70 w-full z-10">
+        </div>
+
+        <div class="absolute inset-0 bg-black/40 md:hidden z-0"></div>
+
+        <div
+            class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20 flex items-center justify-center h-full pt-16">
+            <div class="max-w-xl md:max-w-2xl text-white text-center">
+
+                <h1
+                    class="font-titre font-extrabold text-white text-2xl sm:text-3xl md:text-3xl tracking-tight pr-0 cursor-blink min-h-[1em]">
+                    Dossier de candidature
+                </h1>
+                <div class="mt-10 flex items-center justify-center">
+                    
+                    <i
+                        class="fa-solid fa-angle-down text-5xl font-extrabold text-esegBleuFonce animate-bounce transition-all duration-700"></i>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="py-8 bg-slate-50 font-sans">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="border-b border-slate-200/80 pb-6 flex flex-col items-center">
+                <span
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#61c6fb]/15 text-[#1d5aa0] mb-3">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
+                    Admissions & Conditions
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                    Conditions d'admission et pièces à fournir
+                </h2>
+                <p class="mt-1.5 text-sm sm:text-base text-slate-600 max-w-2xl text-center">
+                    Consultez les diplômes requis selon la formation visée ainsi que la liste des documents à
+                    rassembler.
+                </p>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#1d5aa0]"></span>
+                    1. Diplômes préparés & Diplômes requis
+                </h3>
+
+                <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr
+                                    class="bg-slate-50/80 border-b border-slate-200 text-[11px] uppercase tracking-wider text-slate-500 font-semibold">
+                                    <th scope="col" class="py-3.5 px-6">Diplôme préparé</th>
+                                    <th scope="col" class="py-3.5 px-6">Diplôme ou Niveau requis</th>
+                                    <th scope="col" class="py-3.5 px-6 text-right">Statut</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 text-sm">
+                                <tr class="hover:bg-slate-50/60 transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-slate-800 flex items-center gap-3">
+                                        <span class="w-2 h-2 rounded-full bg-[#61c6fb]"></span>
+                                        CAP
+                                    </td>
+                                    <td class="py-4 px-6 text-slate-600">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                                            Niveau 5<sup>ème</sup>, 4<sup>ème</sup> ou 3<sup>ème</sup>
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-6 text-right">
+                                        <span class="text-xs font-medium text-[#1d5aa0]">Ouvert</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/60 transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-slate-800 flex items-center gap-3">
+                                        <span class="w-2 h-2 rounded-full bg-[#61c6fb]"></span>
+                                        BEP
+                                    </td>
+                                    <td class="py-4 px-6 text-slate-600">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                                            BEPC ou équivalent
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-6 text-right">
+                                        <span class="text-xs font-medium text-[#1d5aa0]">Ouvert</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/60 transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-slate-800 flex items-center gap-3">
+                                        <span class="w-2 h-2 rounded-full bg-[#61c6fb]"></span>
+                                        DAP / BAC PRO
+                                    </td>
+                                    <td class="py-4 px-6 text-slate-600">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                                            BEPC ou BEP
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-6 text-right">
+                                        <span class="text-xs font-medium text-[#1d5aa0]">Ouvert</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/60 transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-slate-800 flex items-center gap-3">
+                                        <span class="w-2 h-2 rounded-full bg-[#61c6fb]"></span>
+                                        BTS
+                                    </td>
+                                    <td class="py-4 px-6 text-slate-600">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                                            BAC, DAP ou équivalent
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-6 text-right">
+                                        <span class="text-xs font-medium text-[#1d5aa0]">Ouvert</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/60 transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-slate-800 flex items-center gap-3">
+                                        <span class="w-2 h-2 rounded-full bg-[#61c6fb]"></span>
+                                        LICENCE
+                                    </td>
+                                    <td class="py-4 px-6 text-slate-600">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                                            BAC, BTS ou équivalent
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-6 text-right">
+                                        <span class="text-xs font-medium text-[#1d5aa0]">Ouvert</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/60 transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-slate-800 flex items-center gap-3">
+                                        <span class="w-2 h-2 rounded-full bg-[#61c6fb]"></span>
+                                        MASTER
+                                    </td>
+                                    <td class="py-4 px-6 text-slate-600">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                                            LICENCE ou équivalent
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-6 text-right">
+                                        <span class="text-xs font-medium text-[#1d5aa0]">Ouvert</span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#1d5aa0]"></span>
+                    2. Pièces administratives communes
+                </h3>
+
+                <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden">
+                    <div class="p-6">
+                        <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold mb-4">
+                            Documents obligatoires pour toute inscription (quel que soit le diplôme visé)
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div
+                                class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5 group hover:border-[#1d5aa0]/30 transition-colors">
+                                <div
+                                    class="p-2.5 rounded-lg bg-[#1d5aa0]/10 text-[#1d5aa0] shrink-0 group-hover:bg-[#1d5aa0] group-hover:text-white transition-colors">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800 text-sm">Acte de naissance</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">Copie officielle ou extrait</p>
+                                </div>
+                            </div>
+                            <div
+                                class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5 group hover:border-[#1d5aa0]/30 transition-colors">
+                                <div
+                                    class="p-2.5 rounded-lg bg-[#1d5aa0]/10 text-[#1d5aa0] shrink-0 group-hover:bg-[#1d5aa0] group-hover:text-white transition-colors">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21a2 2 0 012 2v11a2 2 0 01-2 2H5a2 2 0 01-2-2zm0 0h18" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800 text-sm">Certificat de nationalité</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">Document officiel original</p>
+                                </div>
+                            </div>
+                            <div
+                                class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5 group hover:border-[#1d5aa0]/30 transition-colors">
+                                <div
+                                    class="p-2.5 rounded-lg bg-[#1d5aa0]/10 text-[#1d5aa0] shrink-0 group-hover:bg-[#1d5aa0] group-hover:text-white transition-colors">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800 text-sm">2 Photos d'identité</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">Format officiel récent</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div
+                        class="px-6 py-4 bg-gradient-to-r from-[#1d5aa0] to-[#133d6e] text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <p class="text-xs sm:text-sm text-slate-200 text-center sm:text-left">
+                            <span class="font-semibold text-white">Prêt à postuler ?</span> Munissez-vous de vos pièces
+                            justificatives avant d'entamer le dépôt.
+                        </p>
+                        <button type="button"
+                            class="inline-flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-[#61c6fb] text-white hover:bg-[#133d6e] transition-colors shrink-0">
+                            Commencer l'inscription
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer
+        class="bg-slate-950 text-slate-400 font-sans border-t border-slate-800/80 pt-12 pb-8 lg:pt-16 lg:pb-12 relative">
+        <div
+            class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#61c6fb]/40 to-transparent">
+        </div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
+
+                
+                <div class="lg:col-span-4 space-y-5">
+                    
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl p-1.5 flex items-center justify-center border border-slate-700/60 shadow-sm">
+                            <img src="./images/logo.jpg" loading="lazy" alt="Logo ESEG" loading="lazy" class="w-full h-full object-contain">
+                        </div>
+                        <span class="font-titre font-black text-2xl tracking-tight text-white">ESEG</span>
+                    </div>
+
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
+                        École Supérieure d'Économie et de Gestion. Former les compétences techniques, managériales et
+                        entrepreneuriales pour bâtir l'économie de demain.
+                    </p>
+
+                    
+                    <div class="flex items-center gap-2.5 pt-1">
+                        <a href="#" aria-label="Facebook"
+                            class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center hover:bg-[#1d5aa0] hover:border-[#1d5aa0] hover:text-white hover:-translate-y-0.5 transition-all duration-200">
+                            <i class="fa-brands fa-facebook-f text-xs"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn"
+                            class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center hover:bg-[#1d5aa0] hover:border-[#1d5aa0] hover:text-white hover:-translate-y-0.5 transition-all duration-200">
+                            <i class="fa-brands fa-linkedin-in text-xs"></i>
+                        </a>
+                        <a href="#" aria-label="X Twitter"
+                            class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center hover:bg-[#1d5aa0] hover:border-[#1d5aa0] hover:text-white hover:-translate-y-0.5 transition-all duration-200">
+                            <i class="fa-brands fa-x-twitter text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="lg:col-span-3">
+                    <h4 class="font-titre font-bold text-xs uppercase tracking-widest text-white mb-4">Formations</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm">
+                        <li>
+                            <a href="#"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-200 group-hover:translate-x-1">Secteur
+                                    Numérique & IT</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-200 group-hover:translate-x-1">Génie
+                                    Civil & BTP</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-200 group-hover:translate-x-1">Énergie
+                                    & Électricité</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-200 group-hover:translate-x-1">Tertiaire
+                                    & Management</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="lg:col-span-2">
+                    <h4 class="font-titre font-bold text-xs uppercase tracking-widest text-white mb-4">Liens utiles</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm">
+                        <li>
+                            <a href="./index.html"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-200 group-hover:translate-x-1">Accueil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./filiere.html"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-200 group-hover:translate-x-1">Nos
+                                    filières</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./admission.html"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-200 group-hover:translate-x-1">Admission</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="lg:col-span-3 w-full">
+                    <h4 class="font-titre font-bold text-xs uppercase tracking-widest text-white mb-4">Partenaires</h4>
+                    <div class="grid grid-cols-1 gap-3 opacity-80">
+                        <div class="flex items-center justify-start gap-2">
+                            <img src="./images/logo_uaz.png" alt="UAZ" loading="lazy"
+                                class="h-7 w-auto object-contain hover:scale-105 rounded-sm">
+                            <p>Université d'Agadez</p>
+                        </div>
+
+                        <div class="flex items-center justify-start gap-2">
+                            <img src="./images/craaz.jpeg" alt="CRA AGADEZ" loading="lazy"
+                                class="h-7 w-auto object-contain hover:scale-105 rounded-sm">
+                            <p>Chambre Régionale de l'Agriculture d'Agadez</p>
+                        </div>
+                        <div class="flex items-center justify-start gap-2">
+                            <img src="./images/logo-emair.jpeg" loading="lazy" alt="école des mines de l'air"
+                                class="h-7 w-auto object-contain hover:scale-105 rounded-sm">
+                            <p>EMAÏR</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            
+            <div
+                class="border-t border-slate-900 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 ESEG. Tous droits réservés.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-[#61c6fb] transition-colors">Mentions légales</a>
+                    <a href="#" class="hover:text-[#61c6fb] transition-colors">Politique de confidentialité</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</body>
+
+</html>
