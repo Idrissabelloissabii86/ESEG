@@ -553,10 +553,10 @@
         </div>
     </div>
     <section
-        class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white font-corps reveal opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+        class="py-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto bg-white font-corps reveal opacity-0 translate-y-8 transition-all duration-1000 ease-out">
 
         <div
-            class="relative bg-gradient-to-br from-esegBleuFonce to-[#123d70] rounded-3xl overflow-hidden shadow-xl shadow-[#1d5aa0]/20">
+            class="relative bg-gradient-to-br from-esegBleuFonce to-[#123d70] rounded-xl overflow-hidden shadow-xl shadow-[#1d5aa0]/20">
 
             <!-- Motif décoratif en fond -->
             <div class="absolute -top-24 -right-24 w-72 h-72 bg-white/5 rounded-full blur-2xl"></div>
@@ -670,9 +670,9 @@
     </section>
     <section
         class="reveal opacity-0 translate-y-8 transition-all duration-1000 ease-out py-16 sm:py-20 bg-slate-50 border-t border-b border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <div class="max-w-6xl mb-10 sm:mb-12 flex flex-col items-center">
                 <span
                     class="inline-flex items-center gap-2 py-1.5 px-3.5 rounded-full text-xs font-semibold bg-esegBleuClair/10 text-esegBleuFonce border border-esegBleuClair/20 uppercase tracking-wider mb-4">
                     <i class="fa-solid fa-people-group text-sm"></i> Communauté ESEG
@@ -680,240 +680,305 @@
                 <h2 class="font-titre text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-4">
                     Bien plus que des études, une expérience humaine unique
                 </h2>
-                <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-                    Parce que la réussite passe aussi par l'épanouissement personnel, l'ESEG valorise la vie sociale, le
-                    sport et le divertissement pour forger l'esprit d'équipe et vos futurs réseaux.
+                <p class="text-sm max-w-xl sm:text-base text-slate-900 font-corps leading-relaxed text-center">
+                    Parce que la réussite passe aussi par l'épanouissement personnel, l'ESEG valorise la vie sociale,
+                    le sport et le divertissement pour forger l'esprit d'équipe et vos futurs réseaux.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            <div class="relative">
 
-                <!-- Carte 1 -->
-                <div
-                    class="group relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 lg:col-span-2">
-                    <img src="./images/culture1.jpg" loading="lazy" alt="Journée de l'étudiant ESEG"
-                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                <!-- Bouton gauche -->
+                <button id="carousel-prev" type="button" aria-label="Précédent"
+                    class="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-12 h-12 rounded-full bg-white border border-slate-200 text-esegBleuFonce items-center justify-center shadow-lg hover:bg-esegBleuFonce hover:text-white hover:border-esegBleuFonce transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+                <!-- Bouton droit -->
+                <button id="carousel-next" type="button" aria-label="Suivant"
+                    class="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-12 h-12 rounded-full bg-esegBleuFonce text-white items-center justify-center shadow-lg shadow-[#1d5aa0]/20 hover:bg-esegBleuClair transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <div id="carousel-track"
+                    class="flex gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-1 px-1 no-scrollbar">
+
+                    <!-- Carte 1 -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                        class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                        <img src="./images/culture1.jpg" loading="lazy" alt="Journée de l'étudiant ESEG"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-flag text-[10px]"></i> Tradition
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                            <h3
+                                class="font-titre font-bold text-white text-lg sm:text-2xl transition-all duration-500 ease-out">
+                                Journée de l'étudiant
+                            </h3>
+                            <div
+                                class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <p
+                                        class="pt-3 text-xs sm:text-sm text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Défilé traditionnel, danse et prestations artistiques, les étudiants de l'ESEG
+                                        ont
+                                        exprimés leur attachement aux valeurs culturelles et à l'unité nationale.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span
-                        class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                        <i class="fa-solid fa-flag text-[10px]"></i> Tradition
-                    </span>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                        <h3
-                            class="font-titre font-bold text-white text-lg sm:text-2xl mb-2 group-hover:mb-3 transition-all duration-300">
-                            Journée de l'étudiant
-                        </h3>
-                        <p
-                            class="text-xs sm:text-sm text-slate-200 font-light leading-relaxed opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            Défilé traditionnel, danse et prestations artistiques, les étudiants de l'ESEG ont exprimés
-                            leur attachement aux valeurs culturelles et à l'unité nationale.
-                        </p>
+
+                    <!-- Carte 2 -->
+                    <div
+                        class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                        <img src="./images/Sport1.jpg" loading="lazy" alt="Tournois sportifs ESEG"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-trophy text-[10px]"></i> Sport
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3
+                                class="font-titre font-bold text-white text-lg sm:text-xl transition-all duration-500 ease-out">
+                                Tournois inter-établissements
+                            </h3>
+                            <div
+                                class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <p
+                                        class="pt-3 text-xs text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Victoire éclatante 3-0 de l'équipe ESEG. Au-delà du trophée, une démonstration
+                                        d'excellence, de persévérance et de solidarité.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Carte 3 -->
+                    <div
+                        class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                        <img src="./images/civisme.jpg" loading="lazy" alt="Don de sang"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-hand-holding-heart text-[10px]"></i> Civisme
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3
+                                class="font-titre font-bold text-white text-lg sm:text-xl transition-all duration-500 ease-out">
+                                Don de sang au CRTS d'Agadez
+                            </h3>
+                            <div
+                                class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <p
+                                        class="pt-3 text-xs text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Initiative citoyenne lors de la 10e édition de la Journée de l'étudiant pour
+                                        contribuer activement à la sauvegarde de vies humaines.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 4 -->
+                    <div
+                        class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                        <img src="./images/Sport_match.jpg" loading="lazy" alt="Match de gala ESEG"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-futbol text-[10px]"></i> Match de Gala
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                            <h3
+                                class="font-titre font-bold text-white text-lg sm:text-2xl transition-all duration-500 ease-out">
+                                Enseignants vs Étudiants
+                            </h3>
+                            <div
+                                class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <p
+                                        class="pt-3 text-xs sm:text-sm text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Un match de gala festif remporté 4-0 par les enseignants. La cohésion et la
+                                        proximité entre corps professoral et étudiants sont au cœur de la vision ESEG.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 5 -->
+                    <div
+                        class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                        <img src="./images/soutenance_publique.jpg" loading="lazy" alt="Soutenance publique ESEG"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-graduation-cap text-[10px]"></i> Académie
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3
+                                class="font-titre font-bold text-white text-lg sm:text-xl transition-all duration-500 ease-out">
+                                Soutenance Publique
+                            </h3>
+                            <div
+                                class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <p
+                                        class="pt-3 text-xs text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Mlle Moussa Assan Hamsatou (Gestion de Projets) a défendu son mémoire avec
+                                        rigueur
+                                        et clarté, illustrant l'excellence académique dispensée.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 6 -->
+                    <div
+                        class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                        <img src="./images/event_culture_5.jpg" loading="lazy" alt="Prestation culturelle ESEG"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-palette text-[10px]"></i> Culture
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3
+                                class="font-titre font-bold text-white text-lg sm:text-xl transition-all duration-500 ease-out">
+                                Prestation culturelle
+                            </h3>
+                            <div
+                                class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <p
+                                        class="pt-3 text-xs text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Ateliers de création de projets et prestations artistiques devant un jury de
+                                        professionnels pour stimuler l'esprit d'initiative de nos étudiants.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 7 -->
+                    <div
+                        class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                        <img src="./images/hero12.jpg" loading="lazy" alt="Nuit de l'Excellence ESEG"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-champagne-glasses text-[10px]"></i> Gala
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3
+                                class="font-titre font-bold text-white text-lg sm:text-xl transition-all duration-500 ease-out">
+                                Nuit de l'Excellence
+                            </h3>
+                            <div
+                                class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <p
+                                        class="pt-3 text-xs text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Célébration annuelle pour récompenser les meilleurs talents académiques et
+                                        associatifs de l'école dans une ambiance festive.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 8 -->
+                    <div
+                        class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                        <img src="./images/eseg_cercle_dev.jpg" loading="lazy" alt="Distinction Bénévolat ESEG"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-hands-helping text-[10px]"></i> Bénévolat
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                            <h3
+                                class="font-titre font-bold text-white text-lg sm:text-2xl transition-all duration-500 ease-out">
+                                Distinction Grand Bénévole
+                            </h3>
+                            <div
+                                class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <p
+                                        class="pt-3 text-xs sm:text-sm text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Le Fondateur, Directeur Général de l'ESEG a été honoré par le groupe des
+                                        bénévoles
+                                        Cercle.dev en tant que Grand Bénévole pour son soutien constant aux initiatives
+                                        communautaires.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 9 -->
+                    <div
+                        class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                        <img src="./images/visite_sultanat.jpg" loading="lazy" alt="Visite Sultanat de l'Aïr ESEG"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-landmark text-[10px]"></i> Culture
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3
+                                class="font-titre font-bold text-white text-lg sm:text-xl transition-all duration-500 ease-out">
+                                Visite au Sultanat de l'Aïr
+                            </h3>
+                            <div
+                                class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <p
+                                        class="pt-3 text-xs text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Lors de la 10e cérémonie de la journée de l'étudiant à l'ESEG, les étudiants ont
+                                        effectué une visite guidée au Sultanat de l'Aïr, lieu hautement historique.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Carte 2 -->
-                <div
-                    class="group relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
-                    <img src="./images/Sport1.jpg" loading="lazy" alt="Tournois sportifs ESEG"
-                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
-                    </div>
-                    <span
-                        class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                        <i class="fa-solid fa-trophy text-[10px]"></i> Sport
-                    </span>
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <h3
-                            class="font-titre font-bold text-white text-lg sm:text-xl mb-2 group-hover:mb-3 transition-all duration-300">
-                            Tournois inter-établissements
-                        </h3>
-                        <p
-                            class="text-xs text-slate-200 font-light leading-relaxed opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            Victoire éclatante 3-0 de l'équipe ESEG. Au-delà du trophée, une démonstration d'excellence,
-                            de persévérance et de solidarité.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Carte 3 -->
-                <div
-                    class="group relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
-                    <img src="./images/civisme.jpg" loading="lazy" alt="Don de sang"
-                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
-                    </div>
-                    <span
-                        class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                        <i class="fa-solid fa-hand-holding-heart text-[10px]"></i> Civisme
-                    </span>
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <h3
-                            class="font-titre font-bold text-white text-lg sm:text-xl mb-2 group-hover:mb-3 transition-all duration-300">
-                            Don de sang au CRTS d'Agadez
-                        </h3>
-                        <p
-                            class="text-xs text-slate-200 font-light leading-relaxed opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            Initiative citoyenne lors de la 10e édition de la Journée de l'étudiant pour contribuer
-                            activement à la sauvegarde de vies humaines.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Carte 4 -->
-                <div
-                    class="group relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 lg:col-span-2">
-                    <img src="./images/Sport_match.jpg" loading="lazy" alt="Match de gala ESEG"
-                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
-                    </div>
-                    <span
-                        class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                        <i class="fa-solid fa-futbol text-[10px]"></i> Match de Gala
-                    </span>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                        <h3
-                            class="font-titre font-bold text-white text-lg sm:text-2xl mb-2 group-hover:mb-3 transition-all duration-300">
-                            Enseignants vs Étudiants
-                        </h3>
-                        <p
-                            class="text-xs sm:text-sm text-slate-200 font-light leading-relaxed opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            Un match de gala festif remporté 4-0 par les enseignants. La cohésion et la proximité entre
-                            corps professoral et étudiants sont au cœur de la vision ESEG.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Carte 5 -->
-                <div
-                    class="group relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
-                    <img src="./images/soutenance_publique.jpg" loading="lazy" alt="Soutenance publique ESEG"
-                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
-                    </div>
-                    <span
-                        class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                        <i class="fa-solid fa-graduation-cap text-[10px]"></i> Académie
-                    </span>
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <h3
-                            class="font-titre font-bold text-white text-lg sm:text-xl mb-2 group-hover:mb-3 transition-all duration-300">
-                            Soutenance Publique
-                        </h3>
-                        <p
-                            class="text-xs text-slate-200 font-light leading-relaxed opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            Mlle Moussa Assan Hamsatou (Gestion de Projets) a défendu son mémoire avec rigueur et
-                            clarté, illustrant l'excellence académique dispensée.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Carte 6 -->
-                <div
-                    class="group relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
-                    <img src="./images/event_culture_5.jpg" loading="lazy" alt="Prestation culturelle ESEG"
-                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
-                    </div>
-                    <span
-                        class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                        <i class="fa-solid fa-palette text-[10px]"></i> Culture
-                    </span>
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <h3
-                            class="font-titre font-bold text-white text-lg sm:text-xl mb-2 group-hover:mb-3 transition-all duration-300">
-                            Prestation culturelle
-                        </h3>
-                        <p
-                            class="text-xs text-slate-200 font-light leading-relaxed opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            Ateliers de création de projets et prestations artistiques devant un jury de professionnels
-                            pour stimuler l'esprit d'initiative de nos étudiants.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Carte 7 -->
-                <div
-                    class="group relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 md:col-span-2 lg:col-span-1">
-                    <img src="./images/hero12.jpg" loading="lazy" alt="Nuit de l'Excellence ESEG"
-                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
-                    </div>
-                    <span
-                        class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                        <i class="fa-solid fa-champagne-glasses text-[10px]"></i> Gala
-                    </span>
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <h3
-                            class="font-titre font-bold text-white text-lg sm:text-xl mb-2 group-hover:mb-3 transition-all duration-300">
-                            Nuit de l'Excellence
-                        </h3>
-                        <p
-                            class="text-xs text-slate-200 font-light leading-relaxed opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            Célébration annuelle pour récompenser les meilleurs talents académiques et associatifs de
-                            l'école dans une ambiance festive.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Carte 8 -->
-                <div
-                    class="group relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 lg:col-span-2">
-                    <img src="./images/eseg_cercle_dev.jpg" loading="lazy" alt="Distinction Bénévolat ESEG"
-                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
-                    </div>
-                    <span
-                        class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                        <i class="fa-solid fa-hands-helping text-[10px]"></i> Bénévolat
-                    </span>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                        <h3
-                            class="font-titre font-bold text-white text-lg sm:text-2xl mb-2 group-hover:mb-3 transition-all duration-300">
-                            Distinction Grand Bénévole
-                        </h3>
-                        <p
-                            class="text-xs sm:text-sm text-slate-200 font-light leading-relaxed opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            Le Fondateur, Directeur Général de l'ESEG a été honoré par le groupe des bénévoles
-                            Cercle.dev en tant que Grand Bénévole pour son soutien constant aux initiatives
-                            communautaires.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Carte 9 -->
-                <div
-                    class="group relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
-                    <img src="./images/visite_sultanat.jpg" loading="lazy" alt="Visite Sultanat de l'Aïr ESEG"
-                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
-                    </div>
-                    <span
-                        class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                        <i class="fa-solid fa-landmark text-[10px]"></i> Culture
-                    </span>
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <h3
-                            class="font-titre font-bold text-white text-lg sm:text-xl mb-2 group-hover:mb-3 transition-all duration-300">
-                            Visite au Sultanat de l'Aïr
-                        </h3>
-                        <p
-                            class="text-xs text-slate-200 font-light leading-relaxed opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            Lors de la 10e cérémonie de la journée de l'étudiant à l'ESEG, les étudiants ont effectué
-                            une visite guidée au Sultanat de l'Aïr, lieu hautement historique.
-                        </p>
-                    </div>
-                </div>
-
+                <div id="carousel-dots" class="flex items-center justify-center gap-2 mt-8"></div>
             </div>
         </div>
     </section>
@@ -1216,21 +1281,6 @@
     </footer>
     <script src="./script.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script>
-        (function () {
-            const slides = document.querySelectorAll('.hero-slide');
-            let current = 0;
-            const intervalTime = 5000; // temps d'affichage par image (5s)
-
-            if (slides.length > 1) {
-                setInterval(() => {
-                    slides[current].classList.remove('active');
-                    current = (current + 1) % slides.length;
-                    slides[current].classList.add('active');
-                }, intervalTime);
-            }
-        })();
-    </script>
 
 </body>
 

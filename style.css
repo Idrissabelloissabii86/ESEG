@@ -45,3 +45,29 @@
 .btn-expand-center:hover {
     transform: translateY(-2px);
 }
+
+
+.no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 9999px;
+        background-color: #cbd5e1;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        padding: 0;
+    }
+
+    .carousel-dot.active {
+        width: 24px;
+        background-color: #1d5aa0;
+    }

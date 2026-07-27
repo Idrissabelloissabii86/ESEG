@@ -1,0 +1,62 @@
+
+
+<style>
+    
+</style>
+
+<script>
+    (function () {
+        const track = document.getElementById('carousel-track');
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+        const dotsContainer = document.getElementById('carousel-dots');
+        const cards = track.querySelectorAll('.carousel-card');
+
+        cards.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+            });
+            dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+        function scrollByCard(direction) {
+            const card = track.querySelector('.carousel-card');
+            const gap = parseFloat(getComputedStyle(track).gap) || 24;
+            const scrollAmount = card.offsetWidth + gap;
+            track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        prevBtn.addEventListener('click', () => scrollByCard(-1));
+        nextBtn.addEventListener('click', () => scrollByCard(1));
+
+        function updateUI() {
+            const scrollLeft = track.scrollLeft;
+            const maxScroll = track.scrollWidth - track.clientWidth;
+
+            prevBtn.disabled = scrollLeft <= 4;
+            nextBtn.disabled = scrollLeft >= maxScroll - 4;
+
+            let closestIndex = 0;
+            let closestDistance = Infinity;
+            cards.forEach((card, i) => {
+                const distance = Math.abs(card.offsetLeft - track.scrollLeft);
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestIndex = i;
+                }
+            });
+            dots.forEach((d, i) => d.classList.toggle('active', i === closestIndex));
+        }
+
+        track.addEventListener('scroll', () => {
+            window.requestAnimationFrame(updateUI);
+        });
+
+        window.addEventListener('resize', updateUI);
+        updateUI();
+    })();
+</script>
