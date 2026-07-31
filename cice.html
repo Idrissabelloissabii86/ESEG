@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESEG-Agadez</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link
+        href="https://googleapis.com/css2?family=Inter:wght@400;500etfamily=Plus+Jakarta+Sans:wght@700;800etdisplay=swap"
+        rel="stylesheet">
+    <script src="tailwind.config.js"></script>
+</head>
+
+<body class="font-corps antialiased">
+    <nav class="absolute top-0 left-0 w-full z-50 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center z-[100]">
+                    <img loading="lazy" class="h-10 w-auto object-contain bg-white rounded-full p-1 shadow"
+                        src="./images/logo.jpg" alt="Logo ESEG Agadez">
+                    <span class="ml-3 text-white font-bold text-lg hidden md:block">ESEG</span>
+                </div>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="./index.html"
+                        class="text-white hover:text-esegBleuClair transition font-medium">Accueil</a>
+                    <a href="./filiere.html" class="text-white/90 hover:text-esegBleuClair transition font-medium">Nos
+                        filières</a>
+                    <a href="./admission.html"
+                        class="text-white/90 hover:text-esegBleuClair transition font-medium">Admission</a>
+                    <a href="./cice.html" class="text-white/90 hover:text-esegBleuClair transition font-medium">Centre
+                        CICE</a>
+                    <a href="./index.html#about" class="text-white/90 hover:text-esegBleuClair transition font-medium">À
+                        propos</a>
+                    <a href="./index.html#contact"
+                        class="bg-esegBleuFonce hover:bg-esegBleuClair text-white px-5 py-2.5 rounded-lg font-semibold shadow transition duration-150">Contact</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-white bg-esegBleuFonce focus:outline-none focus:ring-2 focus:ring-white rounded p-1 z-[100]">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="burger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden h-[100vh] lg:hidden bg-none backdrop-blur-md absolute top-0 left-0 w-full">
+            <div class="flex flex-col gap-4 px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center mt-20">
+                <a href="./index.html" class="text-white hover:text-esegBleuClair transition font-medium">Accueil</a>
+                <a href="./filiere.html" class="text-white/90 hover:text-esegBleuClair transition font-medium">Nos
+                    filières</a>
+                <a href="./admission.html"
+                    class="text-white/90 hover:text-esegBleuClair transition font-medium">Admission</a>
+                <a href="./cice.html" class="text-white/90 hover:text-esegBleuClair transition font-medium">Centre
+                    CICE</a>
+                <a href="./index.html#about" class="text-white/90 hover:text-esegBleuClair transition font-medium">À
+                    propos</a>
+                <a href="./index.html#contact"
+                    class="bg-esegBleuFonce hover:bg-esegBleuClair text-white px-5 py-2.5 rounded-lg font-semibold shadow transition duration-150">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <header
+        class="relative bg-cover bg-right md:bg-center h-[20vh] lg:h-[20vh] min-h-[300px] flex items-center overflow-visible"
+        style="background-image: url('./images/cice-logo.jpg');">
+        <div class="absolute inset-0 bg-black/90 w-full z-10">
+        </div>
+        <div class="absolute inset-0 bg-black/40 md:hidden z-0"></div>
+        <div
+            class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20 flex items-center justify-center h-full pt-16">
+            <div class="max-w-xl md:max-w-2xl text-white text-center">
+                <h1
+                    class="font-titre font-extrabold text-white text-2xl sm:text-3xl md:text-3xl tracking-tight pr-0 cursor-blink min-h-[1em]">
+                    <span class="text-esegBleuFonce">C</span>entre <span class="text-esegBleuFonce">I</span>ncubateur et
+                    de <span class="text-esegBleuFonce">C</span>réation d'<span
+                        class="text-esegBleuFonce">E</span>ntreprise
+                </h1>
+                <div class="mt-10 flex items-center justify-center">
+                    <i
+                        class="fa-solid fa-angle-down text-5xl font-extrabold text-esegBleuFonce animate-bounce transition-all duration-700"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="font-corps text-slate-800 bg-white py-12 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28">
+
+            <!-- 1. EN-TÊTE DE SECTION & STATS CLÉS (Layout Asymétrique) -->
+            <section class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200/80 text-xs font-semibold text-slate-700">
+                        <span class="w-2 h-2 rounded-full bg-esegBleuClair animate-pulse"></span>
+                        Incubateur d'Innovation
+                    </div>
+                    <h2 class="text-xl sm:text-3xl font-bold font-titre text-slate-900 leading-[1.15]">
+                        Des solutions concrètes pour les défis d'aujourd'hui.
+                    </h2>
+                    <p class="text-slate-600 text-lg leading-relaxed max-w-2xl">
+                        Nous accompagnons des fondateurs déterminés, de la phase d'idée jusqu'à leur première levée de
+                        fonds ou mise sur le marché.
+                    </p>
+                </div>
+
+                <!-- Métriques en cartes décalées -->
+                <div class="lg:col-span-5 grid grid-cols-1 gap-4">
+                    <div
+                        class="bg-esegBleuFonce text-white p-6 rounded-2xl space-y-2 shadow-lg shadow-esegBleuFonce/10">
+                        <p class="text-3xl sm:text-4xl font-bold font-titre text-esegBleuClair">255</p>
+                        <p class="text-xs sm:text-sm font-medium text-slate-200">Jeunes formés en Leadership,
+                            Entrepreneuriat, rédaction de plan d'affaire, prise de parole en public et valorisation du
+                            patrimoine historique.</p>
+                    </div>
+                    <div class="bg-esegBleuClair p-6 rounded-2xl border border-esegBleuClair/20 space-y-2">
+                        <p class="text-3xl sm:text-4xl font-bold font-titre text-white">492</p>
+                        <p class="text-xs sm:text-sm font-medium text-white">Entreprise soutenues (SCOOPS et PME), dont
+                            155 dirigés par des femmes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. RÉALISATIONS : PROJET À LA UNE + CARTE SECONDAIRES -->
+            <section id="realisations" class="space-y-12">
+                <div
+                    class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-100 pb-6">
+                    <div>
+                        <h3 class="text-2xl sm:text-3xl font-bold font-titre text-slate-900">
+                            Nos dernières réalisations
+                        </h3>
+                        <p class="text-slate-500 text-sm mt-1">Découvrez l'impact de nos entrepreneurs sur le terrain
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative">
+
+                    <!-- Bouton gauche -->
+                    <button id="carousel-prev" type="button" aria-label="Précédent"
+                        class="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-12 h-12 rounded-full bg-white border border-slate-200 text-esegBleuFonce items-center justify-center shadow-lg hover:bg-esegBleuFonce hover:text-white hover:border-esegBleuFonce transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+
+                    <!-- Bouton droit -->
+                    <button id="carousel-next" type="button" aria-label="Suivant"
+                        class="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-12 h-12 rounded-full bg-esegBleuFonce text-white items-center justify-center shadow-lg shadow-[#1d5aa0]/20 hover:bg-esegBleuClair transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <div id="carousel-track"
+                        class="flex gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-1 px-1 no-scrollbar">
+
+                        <!-- Carte 1 -->
+                        <div
+                            class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                            <img src="./images/caroussel/cice1.jpg" loading="lazy" alt="Journée de l'étudiant ESEG"
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                            </div>
+                            <span
+                                class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                                Formation
+                            </span>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                                <h3
+                                    class="font-titre font-bold text-white text-lg sm:text-2xl transition-all duration-500 ease-out">
+                                    Remise des Attestations
+                                </h3>
+                                <div
+                                    class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                    <div class="overflow-hidden">
+                                        <p
+                                            class="pt-3 text-xs sm:text-sm text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                            Défilé traditionnel, danse et prestations artistiques, les étudiants de
+                                            l'ESEG
+                                            ont
+                                            exprimés leur attachement aux valeurs culturelles et à l'unité nationale.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Carte 2 -->
+                        <div
+                            class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                            <img src="./images/caroussel/cice3.jpg" loading="lazy" alt="Journée de l'étudiant ESEG"
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                            </div>
+                            <span
+                                class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                                Forum
+                            </span>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                                <h3
+                                    class="font-titre font-bold text-white text-lg sm:text-2xl transition-all duration-500 ease-out">
+                                    Business Forum à Niamey
+                                </h3>
+                                <div
+                                    class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                    <div class="overflow-hidden">
+                                        <p
+                                            class="pt-3 text-xs sm:text-sm text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                            Le Directeur du Centre Incubateur et de Création d'Entreprise a pris part à Niamey au forum sur l'accélération des entreprises liées aux secteurs de l'eau, de l'énergie et de la nourriture, organisé par RES4Africa Foundation. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <!-- Carte 3 -->
+                        <div
+                            class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                            <img src="./images/caroussel/cice4.jpg" loading="lazy" alt="Don de sang"
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                            </div>
+                            <span
+                                class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                                Formation
+                            </span>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3
+                                    class="font-titre font-bold text-white text-lg sm:text-2xl transition-all duration-500 ease-out">
+                                    Remise des Attestations
+                                </h3>
+                                <div
+                                    class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                    <div class="overflow-hidden">
+                                        <p
+                                            class="pt-3 text-xs sm:text-sm text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                            Cérémonie de remise des attestations de formation en entrepreneuriat qui s'est tenue à Agadez du 08 au 11 Janvier 2021 sur le thème : Comment rédiger un plann d'affaire.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carte 4 -->
+                        <div
+                            class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                            <img src="./images/caroussel/cice5.jpg" loading="lazy" alt="Match de gala ESEG"
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                            </div>
+                            <span
+                                class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                                Forum
+                            </span>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                                <h3
+                                    class="font-titre font-bold text-white text-lg sm:text-xl transition-all duration-500 ease-out">
+                                    Panel Entrepreneuriat agricole et transformation
+                                </h3>
+                                <div
+                                    class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                    <div class="overflow-hidden">
+                                        <p
+                                            class="pt-3 text-xs sm:text-sm text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                            Le Directeur du Centre Incubateur et de Création d'Entreprise (CICE) a pris part, au Panel consacré « Entrepreneuriatagricole et transformation des produits locaux à l'ère du numérique », organisé dans le cadre de la 2e édition du trophée du sultan de l'Aïr sur l'Entrepreneuriat Agricole.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carte 5 -->
+                        <div
+                            class="carousel-card group relative flex-none w-[85%] sm:w-[60%] lg:w-[38%] h-80 sm:h-96 rounded-xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-2xl transition-all duration-500 snap-start">
+                            <img src="./images/caroussel/cice6.jpg" loading="lazy" alt="Soutenance publique ESEG"
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                            </div>
+                            <span
+                                class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-esegBleuClair text-white border border-white/20 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                                Atelier
+                            </span>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3
+                                    class="font-titre font-bold text-white text-lg sm:text-xl transition-all duration-500 ease-out">
+                                    Panel Entrepreneuriat agricole et transformation
+                                </h3>
+                                <div
+                                    class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                                    <div class="overflow-hidden">
+                                        <p
+                                            class="pt-3 text-xs text-slate-200 font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                           Participation des jeunes entrepreneurs au Panel Entrepreneuriat agricole et transformation des produits locaux à l'ère du numérique.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="carousel-dots" class="flex items-center justify-center gap-2 mt-8"></div>
+                </div>
+            </section>
+
+            <!-- 3. PARCOURS DE L'INCUBÉ (3 Étapes claires) -->
+            <section class="space-y-12 bg-slate-50/80 p-8 sm:p-12 rounded-3xl border border-slate-100">
+                <div class="max-w-xl space-y-2">
+                    <h3 class="text-2xl sm:text-3xl font-bold font-titre text-slate-900">
+                        Comment nous transformons votre idée
+                    </h3>
+                    <p class="text-slate-600 text-sm">
+                        Un accompagnement structuré en 3 étapes pour sécuriser votre lancement.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Étape 1 -->
+                    <div class="space-y-4">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-esegBleuFonce text-white font-bold font-titre flex items-center justify-center text-lg shadow-md">
+                            01
+                        </div>
+                        <h4 class="text-lg font-bold font-titre text-slate-900">Idéation & Validation</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Challenge du Business Model, étude de marché sur le terrain et conception de votre premier
+                            prototype (MVP).
+                        </p>
+                    </div>
+
+                    <!-- Étape 2 -->
+                    <div class="space-y-4">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-esegBleuFonce text-white font-bold font-titre flex items-center justify-center text-lg shadow-md">
+                            02
+                        </div>
+                        <h4 class="text-lg font-bold font-titre text-slate-900">Structuration & Mentoring</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Accès direct à nos experts (juridique, tech, finance) et coaching hebdomadaire avec des
+                            entrepreneurs chevronnés.
+                        </p>
+                    </div>
+
+                    <!-- Étape 3 -->
+                    <div class="space-y-4">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-esegBleuFonce text-white font-bold font-titre flex items-center justify-center text-lg shadow-md">
+                            03
+                        </div>
+                        <h4 class="text-lg font-bold font-titre text-slate-900">Mise sur le marché</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Mise en relation avec les premiers clients B2B, préparation du pitch et présentation lors du
+                            Demo Day investisseurs.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. BANNIÈRE CONTACT / APPEL À CANDIDATURE -->
+            <section
+                class="relative bg-esegBleuFonce rounded-3xl p-8 sm:p-14 text-white flex flex-col lg:flex-row items-center justify-between gap-8 overflow-hidden">
+                <!-- Motif géométrique discret -->
+                <div
+                    class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]">
+                </div>
+
+                <div class="space-y-3 text-center lg:text-left z-10 max-w-xl">
+                    <h3 class="text-2xl sm:text-4xl font-bold font-titre">
+                        Prêt à sauter le pas ?
+                    </h3>
+                    <p class="text-slate-200 text-sm sm:text-base">
+                        La sélection de la nouvelle promotion est en cours. Présentez-nous votre projet en moins de 5
+                        minutes.
+                    </p>
+                </div>
+
+                <div class="z-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                   
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center bg-white hover:bg-slate-100 text-esegBleuFonce font-semibold px-8 py-4 rounded-xl transition-all shadow-md">
+                        Poser une question
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer
+        class="bg-slate-950 text-slate-400 font-sans border-t border-slate-800/80 pt-12 pb-8 lg:pt-16 lg:pb-12 relative">
+        <div
+            class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#61c6fb]/40 to-transparent">
+        </div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
+                <div class="lg:col-span-4 space-y-5">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl p-1.5 flex items-center justify-center border border-slate-700/60 shadow-sm">
+                            <img src="./images/logo.jpg" alt="Logo ESEG" loading="lazy"
+                                class="w-full h-full object-contain">
+                        </div>
+                        <span class="font-titre font-black text-2xl tracking-tight text-white">ESEG</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
+                        École Supérieure d'Économie et de Gestion. Former les compétences techniques, managériales et
+                        entrepreneuriales pour bâtir l'économie de demain.
+                    </p>
+                    <div class="flex items-center gap-2.5 pt-1">
+                        <a href="#" aria-label="Facebook"
+                            class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center hover:bg-[#1d5aa0] hover:border-[#1d5aa0] hover:text-white hover:-translate-y-0.5 transition-all duration-300">
+                            <i class="fa-brands fa-facebook-f text-xs"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn"
+                            class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center hover:bg-[#1d5aa0] hover:border-[#1d5aa0] hover:text-white hover:-translate-y-0.5 transition-all duration-300">
+                            <i class="fa-brands fa-linkedin-in text-xs"></i>
+                        </a>
+                        <a href="#" aria-label="X Twitter"
+                            class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center hover:bg-[#1d5aa0] hover:border-[#1d5aa0] hover:text-white hover:-translate-y-0.5 transition-all duration-300">
+                            <i class="fa-brands fa-x-twitter text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <h4 class="font-titre font-bold text-xs uppercase tracking-widest text-white mb-4">Formations</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm">
+                        <li>
+                            <a href="#"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-300 group-hover:translate-x-1">Secteur
+                                    Numérique et IT</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-300 group-hover:translate-x-1">Génie
+                                    Civil et BTP</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-300 group-hover:translate-x-1">Énergie
+                                    et Électricité</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-300 group-hover:translate-x-1">Tertiaire
+                                    et Management</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="font-titre font-bold text-xs uppercase tracking-widest text-white mb-4">Liens utiles</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm">
+                        <li>
+                            <a href="./index.html"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-300 group-hover:translate-x-1">Accueil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./filiere.html"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-300 group-hover:translate-x-1">Nos
+                                    filières</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./admission.html"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-300 group-hover:translate-x-1">Admission</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./cice.html"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-300 group-hover:translate-x-1">Centre
+                                    CICE</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 w-full">
+                    <h4 class="font-titre font-bold text-xs uppercase tracking-widest text-white mb-4">Partenaires</h4>
+                    <div class="grid grid-cols-1 gap-3 opacity-80">
+                        <div class="flex items-center justify-start gap-2">
+                            <img src="./images/logo_uaz.png" alt="UAZ" loading="lazy"
+                                class="h-7 w-auto object-contain hover:scale-105 rounded-sm">
+                            <p>Université d'Agadez</p>
+                        </div>
+                        <div class="flex items-center justify-start gap-2">
+                            <img src="./images/craaz.jpeg" alt="UAZ" loading="lazy"
+                                class="h-7 w-auto object-contain hover:scale-105 rounded-sm">
+                            <p>Chambre Régionale de l'Agriculture d'Agadez</p>
+                        </div>
+                        <div class="flex items-center justify-start gap-2">
+                            <img src="./images/logo-emair.jpeg" alt="UAZ" loading="lazy"
+                                class="h-7 w-auto object-contain hover:scale-105 rounded-sm">
+                            <p>EMAÏR</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-slate-900 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>etcopy; 2026 ESEG. Tous droits réservés.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-[#61c6fb] transition-colors">Mentions légales</a>
+                    <a href="#" class="hover:text-[#61c6fb] transition-colors">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</body>
+
+</html>

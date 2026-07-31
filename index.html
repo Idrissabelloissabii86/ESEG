@@ -37,6 +37,8 @@
                         filières</a>
                     <a href="./admission.html"
                         class="text-white/90 hover:text-esegBleuClair transition font-medium">Admission</a>
+                    <a href="./cice.html" class="text-white/90 hover:text-esegBleuClair transition font-medium">Centre
+                        CICE</a>
                     <a href="#about" class="text-white/90 hover:text-esegBleuClair transition font-medium">À propos</a>
                     <a href="#contact"
                         class="bg-esegBleuFonce hover:bg-esegBleuClair text-white px-5 py-2.5 rounded-lg font-semibold shadow transition duration-150">Contact</a>
@@ -59,6 +61,8 @@
                     filières</a>
                 <a href="./admission.html"
                     class="text-white/90 hover:text-esegBleuClair transition font-medium">Admission</a>
+                <a href="./cice.html" class="text-white/90 hover:text-esegBleuClair transition font-medium">Centre
+                    CICE</a>
                 <a href="#about" class="text-white/90 hover:text-esegBleuClair transition font-medium">À propos</a>
                 <a href="#contact"
                     class="bg-esegBleuFonce hover:bg-esegBleuClair text-white px-5 py-2.5 rounded-lg font-semibold shadow transition duration-150">Contact</a>
@@ -70,13 +74,17 @@
         <!-- Carrousel d'images en background -->
         <div class="absolute inset-0 z-0">
             <div class="hero-slide active bg-cover bg-right md:bg-center"
+                style="background-image: url('./images/caroussel/sultan.jpg');"></div>
+            <div class="hero-slide bg-cover bg-top md:bg-center"
+                style="background-image: url('./images/caroussel/personnel_DE.jpg');"></div>
+            <div class="hero-slide bg-cover bg-right md:bg-center"
+                style="background-image: url('./images/caroussel/personnal1.jpg');"></div>
+            <div class="hero-slide bg-cover bg-right md:bg-center"
+                style="background-image: url('./images/caroussel/event_etudiant1.jpg');"></div>
+            <div class="hero-slide bg-cover bg-right md:bg-center"
                 style="background-image: url('./images/caroussel/caroussel10.jpg');"></div>
             <div class="hero-slide bg-cover bg-right md:bg-center"
                 style="background-image: url('./images/caroussel/hero5.jpg');"></div>
-            <div class="hero-slide bg-cover bg-right md:bg-center"
-                style="background-image: url('./images/caroussel/personnal1.jpg');"></div>
-            <div class="hero-slide bg-cover bg-top md:bg-center"
-                style="background-image: url('./images/caroussel/personnel_DE.jpg');"></div>
             <div class="hero-slide bg-cover bg-right md:bg-center"
                 style="background-image: url('./images/caroussel/image1.jpg');"></div>
             <div class="hero-slide bg-cover bg-right md:bg-center"
@@ -597,11 +605,10 @@
                     </div>
 
                     <div>
-                        <a href="https://forms.gle/iePpGixW24bzNpNPA" target="_blank"
+                        <a href="./cice.html"
                             class="inline-flex items-center justify-center gap-2 w-full sm:w-auto font-titre font-bold text-sm px-7 py-4 rounded-xl text-esegBleuFonce bg-white hover:bg-esegBleuClair hover:text-white shadow-lg shadow-black/10 transition-all duration-300 group">
-                            Soumettre mon projet
-                            <i
-                                class="fa-solid fa-rocket group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                            en savoir plus
+                            <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
                 </div>
@@ -1045,43 +1052,53 @@
                     </div>
                 </div>
                 <div class="lg:col-span-7 bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-xs">
-                    <form action="mailto:toubaldev227@gmail.com" method="POST" enctype="text/plain" class="space-y-5">
+                    <form id="contact-form" class="space-y-5">
+                        <!-- Champ Email (Indispensable pour pouvoir recontacter la personne) -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
                                 <label for="name"
                                     class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nom
                                     complet</label>
-                                <input type="text" id="name" name="Nom" required
-                                    class="w-full px-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-hidden focus:border-[#1d5aa0] focus:ring-2 focus:ring-[#1d5aa0]/10 transition-all">
+                                <input type="text" id="name" name="from_name" required
+                                    class="w-full px-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-[#1d5aa0] focus:ring-2 focus:ring-[#1d5aa0]/10 transition-all">
                             </div>
                             <div>
-                                <label for="phone"
-                                    class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Téléphone</label>
-                                <input type="tel" id="phone" name="Telephone"
-                                    class="w-full px-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-hidden focus:border-[#1d5aa0] focus:ring-2 focus:ring-[#1d5aa0]/10 transition-all">
+                                <label for="email"
+                                    class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Adresse
+                                    E-mail</label>
+                                <input type="email" id="email" name="reply_to" required
+                                    class="w-full px-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-[#1d5aa0] focus:ring-2 focus:ring-[#1d5aa0]/10 transition-all">
                             </div>
                         </div>
+
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                                Sujet du message
-                            </label>
+                            <label for="phone"
+                                class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Téléphone</label>
+                            <input type="tel" id="phone" name="phone_number"
+                                class="w-full px-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-[#1d5aa0] focus:ring-2 focus:ring-[#1d5aa0]/10 transition-all">
+                        </div>
+
+                        <!-- Le composant AlpineJS pour le sujet reste inchangé -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Sujet du
+                                message</label>
                             <div x-data="{ 
-                                    open: false, 
-                                    selected: 'Information Inscription', 
-                                    selectedLabel: 'Demande d\'inscription / Admission',
-                                    options: [
-                                        { value: 'Information Inscription', label: 'Demande d\'inscription / Admission' },
-                                        { value: 'Renseignement Filieres', label: 'Renseignement sur les filières' },
-                                        { value: 'Partenariat', label: 'Demande de partenariat / Incubateur' },
-                                        { value: 'Autre', label: 'Autre demande administrative' }
-                                    ],
-                                    select(option) {
-                                        this.selected = option.value;
-                                        this.selectedLabel = option.label;
-                                        this.open = false;
-                                    }
-                                }" @click.outside="open = false" class="relative w-full">
-                                <input type="hidden" name="Sujet" :value="selected" required>
+                open: false, 
+                selected: 'Information Inscription', 
+                selectedLabel: 'Demande d\'inscription / Admission',
+                options: [
+                    { value: 'Information Inscription', label: 'Demande d\'inscription / Admission' },
+                    { value: 'Renseignement Filieres', label: 'Renseignement sur les filières' },
+                    { value: 'Partenariat', label: 'Demande de partenariat / Incubateur' },
+                    { value: 'Autre', label: 'Autre demande administrative' }
+                ],
+                select(option) {
+                    this.selected = option.value;
+                    this.selectedLabel = option.label;
+                    this.open = false;
+                }
+            }" @click.outside="open = false" class="relative w-full">
+                                <input type="hidden" name="subject" :value="selected" required>
                                 <button type="button" @click="open = !open"
                                     class="w-full flex items-center justify-between px-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none transition-all text-slate-700 cursor-pointer"
                                     :class="{ 'border-[#1d5aa0] ring-2 ring-[#1d5aa0]/10': open }">
@@ -1104,9 +1121,7 @@
                                     <template x-for="option in options" :key="option.value">
                                         <div @click="select(option)"
                                             class="flex items-center justify-between px-3 py-2.5 text-sm rounded-lg cursor-pointer transition-colors"
-                                            :class="selected === option.value 
-                                    ? 'bg-[#1d5aa0]/10 text-[#1d5aa0] font-medium' 
-                                    : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'">
+                                            :class="selected === option.value ? 'bg-[#1d5aa0]/10 text-[#1d5aa0] font-medium' : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'">
                                             <span x-text="option.label" class="truncate"></span>
                                             <svg x-show="selected === option.value"
                                                 class="w-4 h-4 text-[#1d5aa0] shrink-0 ml-2" fill="none"
@@ -1119,18 +1134,23 @@
                                 </div>
                             </div>
                         </div>
+
                         <div>
                             <label for="message"
                                 class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Votre
                                 message</label>
-                            <textarea id="message" name="Message" rows="4" required
+                            <textarea id="message" name="message" rows="4" required
                                 placeholder="Expliquez votre demande en quelques lignes..."
-                                class="w-full px-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-hidden focus:border-[#1d5aa0] focus:ring-2 focus:ring-[#1d5aa0]/10 transition-all resize-none"></textarea>
+                                class="w-full px-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-[#1d5aa0] focus:ring-2 focus:ring-[#1d5aa0]/10 transition-all resize-none"></textarea>
                         </div>
+
+                        <!-- Message de notification de succès/erreur -->
+                        <div id="form-response" class="hidden text-sm p-4 rounded-xl"></div>
+
                         <div class="pt-2">
-                            <button type="submit"
-                                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-titre font-bold text-sm px-6 py-3.5 rounded-xl text-white bg-[#1d5aa0] hover:bg-esegBleuClair shadow-sm shadow-[#1d5aa0]/10 transition-all duration-200 group">
-                                Envoyer l'e-mail
+                            <button type="submit" id="submit-btn"
+                                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-titre font-bold text-sm px-6 py-3.5 rounded-xl text-white bg-[#1d5aa0] hover:bg-esegBleuClair shadow-sm shadow-[#1d5aa0]/10 transition-all duration-200 cursor-pointer">
+                                <span id="btn-text">Envoyer le message</span>
                             </button>
                         </div>
                     </form>
@@ -1235,6 +1255,14 @@
                                     class="inline-block transition-transform duration-200 group-hover:translate-x-1">Admission</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="./cice.html"
+                                class="group inline-flex items-center gap-1.5 hover:text-[#61c6fb] transition-colors">
+                                <span
+                                    class="inline-block transition-transform duration-200 group-hover:translate-x-1">Centre
+                                    CICE</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="lg:col-span-3 w-full">
@@ -1283,5 +1311,52 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </body>
+<!-- SDK EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+<script>
+  (function() {
+    // Remplacez 'VOTRE_PUBLIC_KEY' par la clé publique obtenue sur emailjs.com
+    emailjs.init("VOTRE_PUBLIC_KEY");
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const responseBox = document.getElementById('form-response');
+
+    // Changement d'état du bouton (chargement)
+    submitBtn.disabled = true;
+    btnText.textContent = "Envoi en cours...";
+
+    // Identifiants EmailJS à remplacer
+    const serviceID = "VOTRE_SERVICE_ID";
+    const templateID = "VOTRE_TEMPLATE_ID";
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        btnText.textContent = "Envoyer le message";
+        submitBtn.disabled = false;
+        
+        // Affichage succès
+        responseBox.className = "text-sm p-4 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200";
+        responseBox.textContent = "Votre message a été envoyé avec succès ! Notre équipe vous répondra sous peu.";
+        responseBox.classList.remove('hidden');
+
+        // Réinitialisation du formulaire
+        document.getElementById('contact-form').reset();
+      }, (error) => {
+        btnText.textContent = "Envoyer le message";
+        submitBtn.disabled = false;
+
+        // Affichage erreur
+        responseBox.className = "text-sm p-4 rounded-xl bg-rose-50 text-rose-700 border border-rose-200";
+        responseBox.textContent = "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.";
+        responseBox.classList.remove('hidden');
+        console.error("EmailJS Error:", error);
+      });
+  });
+</script>
 </html>
